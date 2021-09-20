@@ -1,34 +1,92 @@
 body{
-    background-color: #10861a;
+  background-image: linear-gradient(135deg, #88a5c5, #ff860c); /*blue and orange*/
+}
+.mainHeading{
+  font-style: italic;
+  text-align: center;
+}
+
+.navbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #103b0f;
+}
+
+.navbar li {
+  float: left;
+}
+.navbar .acc{
+  float: right; /*to push the account tab to the right*/
+}
+.navbar .highlighted{
+  background-color: #404731 ; /*To denote current page*/
+}
+.navbar a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 18px; /* height, width */
+  text-decoration: none;
+}
+
+/* Change the link color to black on hover */
+.navbar a:hover {
+  background-color: #000000;
+}
+
+/* The 3D space where the card will flip */
+.scene {
+  width: 200px;
+  height: 260px;
+  perspective: 600px;
+}
+
+.card{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.65s;
+  transform-style: preserve-3d;
+  align-text: center;
+}
+
+/* Rows and columns */
+
+.row {
+  display: flex;
+  padding: 10%;
+}
+
+.column {
+  flex: 50%;
+  ;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
-  .mainHeading{
-    font-style: italic;
-    text-align: center;
-  }
-  
-  .navbar ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #472b0f;
-  }
-  
-  .navbar li {
-    float: left;
-  }
-  
-  .navbar a{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 18px; /* height, width */
-    text-decoration: none;
-  }
-  
-  /* Change the link color to black on hover */
-  li a:hover {
-    background-color: #000000;
-  }
-  
-  
+}
+
+.card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: red;
+}
+
+.card__face--back {
+  background: blue;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}

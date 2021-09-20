@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
   <div class="navbar">
     <ul>
-      <li><a href="default.asp">Home</a></li>
-      <li><a href="news.asp">News</a></li>
+      <li><a class="highlighted" href="default.asp">Home</a></li>
+      <li><a href="news.asp">New</a></li>
       <li><a href="contact.asp">Contact</a></li>
       <li><a href="about.asp">About</a></li>
+      <li class="acc"><a href="about.asp">account</a></li>
     </ul>
   </div>
+  
   <div class="mainHeading"><h1>Flash Learn</h1></div>
+  
+  <!-- two columns -->
+  <div class="row">
+    <div class="column">
+      <!-- card that flips on a click -->
+      <div class="scene">
+        <div class="card">
+          <div class="card__face card__face--front">front</div>
+          <div class="card__face card__face--back">back</div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="scene">
+        <div class="card">
+          <div class="card__face card__face--front">front</div>
+          <div class="card__face card__face--back">back</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <script src="/javascript/app.js"></script>
 </body>
 </html>
