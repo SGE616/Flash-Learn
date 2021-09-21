@@ -38,8 +38,8 @@ body{
 
 /* The 3D space where the card will flip */
 .scene {
-  width: 200px;
-  height: 260px;
+  width: 300px;
+  height: 400px;
   perspective: 600px;
 }
 
@@ -49,7 +49,6 @@ body{
   position: relative;
   transition: transform 0.65s;
   transform-style: preserve-3d;
-  align-text: center;
 }
 
 /* Rows and columns */
@@ -57,25 +56,23 @@ body{
 .row {
   display: flex;
   padding: 10%;
+  justify-content: center;
+  align-items: center;
 }
 
 .column {
-  flex: 50%;
-  ;
+  padding: 5%;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
 
 .card__face {
   position: absolute;
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 400px;
 }
 
 .card__face--front {
