@@ -1,0 +1,7 @@
+<% layout('layouts/boilerplate') %> 
+<h1>Q - Bank</h1>
+   <ul>
+       <% for(let card of cards) { %>
+            <li> <%= card.question %> - <%= card.answer %> (<%= card.category %>)</li>
+       <% } %> 
+   </ul>

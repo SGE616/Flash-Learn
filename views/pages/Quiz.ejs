@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') %> 
+<div class="mainHeading"><h1>Quiz</h1></div>
+
+<% let size = 0 %> 
+<% for(let card of cards){ size += 1 } %>
+<% let rand = Math.floor((Math.random()*1000)%size) %> 
+
+<form action="/answers" method="post">
+    <label for="questionText">Question:</label><br>
+    <p id="questionText"> <%= cards[rand].question %>  </p>
+    <input type="hidden" id="question" name="question" value="<%= cards[rand].question %>"> <br><br>
+    <label for="answer">Answer:</label><br>
+    <input type="text" id="answer" name="answer"><br><br>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<p>Score: <%= score %> </p>
+

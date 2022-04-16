@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %> 
+<div class="mainHeading"><h1>New</h1></div>
+
+
+<form action="/questions" method="post">
+    <label for="question">Question:</label><br>
+    <input type="text" id="question" name="question"><br><br>
+    <label for="answer">Answer:</label><br>
+    <input type="text" id="answer" name="answer"><br><br>
+    <label for="category">Category:</label><br>
+    <select name="category" id="category">
+        <% for(category of ['easy', 'moderate', 'hard']){ %>
+            <option value="<%= category %>"><%= category %></option>
+        <% } %> 
+    </select>
+    <br><br>
+    <button type="submit">Submit</button>
+
+    <a href="/Qbank">View Question Bank</a>
+</form>
